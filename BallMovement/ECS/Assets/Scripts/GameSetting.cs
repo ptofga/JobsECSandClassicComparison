@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class GameSetting : MonoBehaviour {
 
-    public int BallNumber=100;
+    public int BallNumber=15000;
     public float BallBound=50f;
 }

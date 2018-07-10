@@ -15,18 +15,11 @@ namespace ECSPractise
         public static Entity ballEntity;
         public static EntityArchetype ballArchetype;
         public static MeshInstanceRenderer BallLook;
-
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        private static void InitBeforeScene()
-        {
-
-            entityManager = World.Active.GetOrCreateManager<EntityManager>();
-
-        }
+        
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void InitAfterScene()
         {
-
+            entityManager = World.Active.GetOrCreateManager<EntityManager>();
             gameSetting = GameObject.Find("GameSettingObject").GetComponent<GameSetting>();
 
             ballArchetype = entityManager.CreateArchetype(typeof(Position), typeof(Rotation),typeof(BallData), typeof(TransformMatrix));
